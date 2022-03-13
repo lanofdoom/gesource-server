@@ -5,17 +5,6 @@ load("@io_bazel_rules_docker//docker/util:run.bzl", "container_run_and_extract")
 load("@com_github_lanofdoom_steamcmd//:defs.bzl", "steam_depot_layer")
 
 #
-# Source Dedicated Server Layer
-#
-
-steam_depot_layer(
-    name = "srcds",
-    app = "205",
-    directory = "/opt/game",
-    os = "windows",
-)
-
-#
 # Source SDK Base 2007 Layer
 #
 
@@ -155,7 +144,6 @@ container_image(
         ":entrypoint.sh",
     ],
     layers = [
-        ":srcds",
         ":sdk",
         ":goldeneye",
         ":metamod",
