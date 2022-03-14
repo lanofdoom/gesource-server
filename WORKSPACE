@@ -55,10 +55,17 @@ http_archive(
 )
 
 http_file(
-    name = "goldeneye",
-    downloaded_file_path = "goldeneye.7z",
-    sha256 = "79643189e9d6549e13ed9545d2277cb34bac05fff645d44d9de1f0ab030610d3",
-    urls = ["https://www.moddb.com/downloads/mirror/126201/123/f7b0519309c6389d32a409a9db459e2e/"],
+    name = "goldeneye_part1",
+    downloaded_file_path = "goldeneye.7z.001",
+    sha256 = "19dbae3936499f55e60c4f4227d14b0e5292f0211257a99c1acc008a95c89c8d",
+    urls = ["https://github.com/lanofdoom/gesource-server/releases/download/v5.0.6/GoldenEye_Source_v5.0.6_full_server_windows.7z.001"],
+)
+
+http_file(
+    name = "goldeneye_part2",
+    downloaded_file_path = "goldeneye.7z.002",
+    sha256 = "483475bfe4d06a3c644d7f5b0e3aa4c5ce91ba11b6b60a270c7cccdf892d292b",
+    urls = ["https://github.com/lanofdoom/gesource-server/releases/download/v5.0.6/GoldenEye_Source_v5.0.6_full_server_windows.7z.002"],
 )
 
 http_archive(

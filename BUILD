@@ -24,7 +24,8 @@ container_image(
     base = "@base_image//image",
     directory = "/",
     files = [
-        "@goldeneye//file",
+        "@goldeneye_part1//file",
+        "@goldeneye_part2//file",
     ],
 )
 
@@ -34,7 +35,7 @@ container_run_and_extract(
     commands = [
         "apt update && apt install -y p7zip-full",
         "cd /opt",
-        "7z x /goldeneye.7z",
+        "7za x /goldeneye.7z.001",
         "tar -czf /goldeneye.tar.gz gesource"
     ],
     extract_file = "/goldeneye.tar.gz",
