@@ -58,7 +58,7 @@ http_file(
     name = "goldeneye",
     downloaded_file_path = "goldeneye.7z",
     sha256 = "79643189e9d6549e13ed9545d2277cb34bac05fff645d44d9de1f0ab030610d3",
-    urls = ["https://www.moddb.com/downloads/mirror/126201/119/8cad29ec4153d485a1fdd196b4253258/"],
+    urls = ["https://www.moddb.com/downloads/mirror/126201/123/f7b0519309c6389d32a409a9db459e2e/"],
 )
 
 http_archive(
