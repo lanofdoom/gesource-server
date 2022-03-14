@@ -36,16 +36,16 @@ container_run_and_extract(
         "apt update && apt install -y p7zip-full",
         "cd /opt",
         "7za x /goldeneye.7z.001",
-        "tar -czf /goldeneye.tar.gz gesource"
+        "tar -cf /goldeneye.tar gesource"
     ],
-    extract_file = "/goldeneye.tar.gz",
+    extract_file = "/goldeneye.tar",
 )
 
 container_layer(
     name = "goldeneye",
     directory = "/opt/game",
     tars = [
-        ":goldeneye_convert/goldeneye.tar.gz",
+        ":goldeneye_convert/goldeneye.tar",
     ],
 )
 
