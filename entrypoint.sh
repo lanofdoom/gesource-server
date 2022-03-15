@@ -25,7 +25,7 @@ echo "hostname \"$GE_HOSTNAME\"" >> /opt/game/gesource/cfg/server.cfg
 export TERM=xterm
 
 # Start display server
-Xvfb :1 -screen 0 800x600x16 &
+Xvfb :98 -screen 0 800x600x16 &
 sleep 1s
 
 # Create temporary wine root
@@ -35,8 +35,8 @@ export WINEPREFIX=$(mktemp -d)
 cd /opt/game
 
 # Configure wine and start game
-WINEARCH="win32" wine winecfg
-DISPLAY=":1.0" wine start srcds.exe \
+export DISPLAY=:98.0
+wine start /wait srcds.exe \
     -game gesource \
     -port "$GE_PORT" \
     -strictbindport \
@@ -48,5 +48,3 @@ DISPLAY=":1.0" wine start srcds.exe \
     +sv_password "$GE_PASSWORD" \
     +sm_auth_by_steam_group_group_id "$STEAM_GROUP_ID" \
     +sm_auth_by_steam_group_steam_key "$STEAM_API_KEY"
-
-wineserver --wait

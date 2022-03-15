@@ -62,6 +62,14 @@ container_layer(
     ],
 )
 
+container_layer(
+    name = "metamod_vdf",
+    directory = "/opt/game/gesource/addons",
+    files = [
+        ":metamod.vdf",
+    ],
+)
+
 #
 # SourceMod Layer
 #
@@ -148,6 +156,7 @@ container_image(
         ":sdk",
         ":goldeneye",
         ":metamod",
+        ":metamod_vdf",
         ":sourcemod",
         ":authorization",
         ":config",
