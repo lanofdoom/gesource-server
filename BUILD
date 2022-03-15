@@ -109,6 +109,18 @@ container_layer(
 )
 
 #
+# Workaround Layer
+#
+
+container_layer(
+    name = "workaround",
+    directory = "/opt/game/config",
+    files = [
+        ":config.vdf",
+    ],
+)
+
+#
 # Server Base Image
 #
 
@@ -160,6 +172,7 @@ container_image(
         ":sourcemod",
         ":authorization",
         ":config",
+        ":workaround",
     ],
 )
 
